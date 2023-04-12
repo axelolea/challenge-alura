@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const decoder_1 = require("./decoder");
+const encryptBtn = document.querySelector('button#encrypt');
+const decryptBtn = document.querySelector('button#decrypt');
+const textInput = document.querySelector('textarea#textInput');
+const textOutput = document.querySelector('textarea#textOutput');
+const insertTextOutput = (inputText, decoder) => textOutput.value = decoder(inputText);
+encryptBtn.onclick = () => insertTextOutput(textInput.value, decoder_1.encrypted);
+decryptBtn.onclick = () => insertTextOutput(textInput.value, decoder_1.decrypted);
